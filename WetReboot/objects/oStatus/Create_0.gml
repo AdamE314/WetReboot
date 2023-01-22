@@ -1,4 +1,6 @@
 
+audio_play_sound(song_wetware,2,1);
+
 enum STATE
 {
 	FREE,
@@ -98,6 +100,7 @@ buildCheckTile = function(_x,_y,_hitbox=sTurretHitbox)
 
 build = function(_x, _y)
 {
+	audio_play_sound(sJobDone,1,0);
 	instance_create_layer(_x,_y,"Instances",buildings[buildMode].object);
 	global.scrap -= buildings[buildMode].scrap;
 	global.compounds -= buildings[buildMode].compounds;

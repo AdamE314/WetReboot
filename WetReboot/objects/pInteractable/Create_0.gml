@@ -11,8 +11,12 @@ oneTime = false;
 used = false;
 targetSprite = -1;
 
+processaudio = sBuildSound;
+audio = -1;
+
 giveReward = function()
 {
+	if(audio != -1) audio_play_sound(audio,1,0);
 	if(!oneTime || !used)
 	{
 		global.scrap += reward.scrap;
@@ -25,3 +29,4 @@ giveReward = function()
 		if(oneTime && targetSprite != -1) sprite_index = targetSprite;
 	}
 }
+

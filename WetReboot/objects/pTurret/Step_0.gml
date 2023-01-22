@@ -27,8 +27,9 @@ if(instance_exists(pEnemy))
 				burstTimer--;
 				if(burstTimer <= 0){
 					var _bullet = instance_create_layer(x,y-12,"Bullets",oBullet);
-					audio_listener_position(-oPlayer.x,oPlayer.y,0);
-					audio_play_sound_at(sfx_turretshot,-x,y,0,50,100,1,false,1);
+					
+					audio_listener_position(camera_get_view_x(view_camera[0]),camera_get_view_y(view_camera[0]),0);
+					audio_play_sound_at(sTurretShot,-x,y,0,50,100,1,false,1);
 					_bullet.damage = damage;
 					_bullet.image_angle = myAngle;
 					burstCount--;

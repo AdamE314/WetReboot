@@ -1,1 +1,1 @@
-global.health = 0;
+global.health = 1;
