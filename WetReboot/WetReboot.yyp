@@ -14,6 +14,7 @@
     {"id":{"name":"input_icons","path":"scripts/input_icons/input_icons.yy",},"order":6,},
     {"id":{"name":"input_gamepad_get_dpad_style","path":"scripts/input_gamepad_get_dpad_style/input_gamepad_get_dpad_style.yy",},"order":3,},
     {"id":{"name":"pTurret","path":"objects/pTurret/pTurret.yy",},"order":7,},
+    {"id":{"name":"sEnemySpawn","path":"sprites/sEnemySpawn/sEnemySpawn.yy",},"order":28,},
     {"id":{"name":"pInteractable","path":"objects/pInteractable/pInteractable.yy",},"order":4,},
     {"id":{"name":"__input_binding_get_label","path":"scripts/__input_binding_get_label/__input_binding_get_label.yy",},"order":3,},
     {"id":{"name":"__input_config_verbs","path":"scripts/__input_config_verbs/__input_config_verbs.yy",},"order":7,},
@@ -358,7 +359,6 @@
     {"name":"Windows","path":"options/windows/options_windows.yy",},
     {"name":"operagx","path":"options/operagx/options_operagx.yy",},
     {"name":"Main","path":"options/main/options_main.yy",},
-    {"name":"HTML5","path":"options/html5/options_html5.yy",},
   ],
   "defaultScriptType": 1,
   "isEcma": false,
@@ -421,6 +421,6 @@
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"sdl2.txt","CopyToMask":-1,"filePath":"datafiles",},
   ],
   "MetaData": {
-    "IDEVersion": "2022.9.1.51",
+    "IDEVersion": "2022.11.1.56",
   },
 }

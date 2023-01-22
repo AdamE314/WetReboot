@@ -2,7 +2,10 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "oSpawnPoint",
-  "spriteId": null,
+  "spriteId": {
+    "name": "sEnemySpawn",
+    "path": "sprites/sEnemySpawn/sEnemySpawn.yy",
+  },
   "solid": false,
   "visible": true,
   "managed": true,
