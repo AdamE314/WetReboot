@@ -109,14 +109,16 @@ spawning = false;
 spawningDelay = 60;
 spawningTimer = spawningDelay;
 spawnIndex = 0;
-spawnPoints = [ {spawnX: room_width/2, spawnY: room_height/2} ]
+currentSpawnPointCount = 2;
+currentSpawnPoint = 0;
+spawnPoints = [ {spawnX: room_width/2, spawnY: room_height/2}, {spawnX: room_width*3/4, spawnY: room_height/4} ]
 global.progress = 0;
 enemySpawnLists = 
 [
 	[
-	{enemy : oFish, count: 1, spawnpoint: 0},
-	{enemy : oFish, count: 2, spawnpoint: 0},
-	{enemy : oFish, count: 3, spawnpoint: 0},
-	{enemy : oBrute, count: 1, spawnpoint: 0}
+	{enemy : oFish, count: 1},
+	{enemy : oFish, count: 2},
+	{enemy : oFish, count: 3},
+	{enemy : oBrute, count: 1}
 	]
 ]

@@ -33,7 +33,7 @@ switch(global.state)
 		{
 			var _dist = distance_to_object(targetInteractable);
 			targetInteractableDistance = _dist;
-			if(_dist > targetInteractableRange)
+			if(_dist > targetInteractableRange || place_meeting(x,y,oDoor))
 			{
 				targetInteractable = noone;
 				targetInteractableDistance = -1;
