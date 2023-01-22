@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "oDoor",
   "spriteId": {
-    "name": "sDoor",
-    "path": "sprites/sDoor/sDoor.yy",
+    "name": "hbWall",
+    "path": "sprites/hbWall/hbWall.yy",
   },
   "solid": false,
   "visible": true,
