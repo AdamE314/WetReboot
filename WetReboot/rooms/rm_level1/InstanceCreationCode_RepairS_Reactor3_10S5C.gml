@@ -1,0 +1,1 @@
+cost = { scrap: 10, compounds: 5 };
