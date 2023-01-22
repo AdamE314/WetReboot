@@ -3,6 +3,8 @@ switch(global.state)
 {
 	case STATE.FREE:
 		
+		if(!wakeup) exit;
+		
 		if(sprite_index == hibernateSprite)
 		{
 			image_speed = -1;

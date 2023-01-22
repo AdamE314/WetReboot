@@ -6,18 +6,23 @@ enum STATE
 }
 
 global.state = STATE.FREE;
-
+global.enterFree = false;
+rebooting = false;
 enterSleep = function()
 {
 	for(var i=0;i<array_length(buildings);i++) { buildings[i].mouse = 0; }
-	instance_create_layer(room_width/2,room_height/2,"Instances",pEnemy);
 	buildMode = -1;
 	global.state = STATE.SLEEP;
+	oPlayer.wakeup = false;
+	global.enterFree = false;
+	audio_play_sound(sndPowerDown,1,0);
+	alarm_set(0,120);
 }
 enterFree = function()
 {
 	global.state = STATE.FREE;
-	global.energy = global.energymax;
+	rebooting = true;
+	alarm_set(3,90);
 }
 
 global.scrap = 0;
@@ -25,6 +30,10 @@ global.compounds = 0;
 
 global.energymax = 300;
 global.energy = global.energymax;
+energyrefill = 0;
+
+global.healthmax = 25;
+global.health = global.healthmax;
 
 buildMode = -1; // -1 for none, index of which one for building
 

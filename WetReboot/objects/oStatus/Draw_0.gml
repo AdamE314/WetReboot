@@ -7,8 +7,11 @@ var _camh = camera_get_view_height(view_camera[0]);
 draw_text(_camx + 16, _camy + 16, "Scrap: "+string(global.scrap));
 draw_text(_camx + 16, _camy + 32, "Compounds: "+string(global.compounds));
 
-draw_sprite_outline(sEnergyBar,0,_camx+24,_camy+256);
-draw_sprite_ext(sEnergyBar,1,_camx+24,_camy+256,1,global.energy/global.energymax,0,c_white,1);
+draw_sprite_outline(sEnergyBar,0,_camx+24,_camy+192);
+draw_sprite_ext(sEnergyBar,1,_camx+24,_camy+192,1,global.energy/global.energymax,0,merge_color(c_yellow,c_white,0.5),1);
+
+draw_sprite_outline(sEnergyBar,0,_camx+24,_camy+320);
+draw_sprite_ext(sEnergyBar,1,_camx+24,_camy+320,1,max(0,global.health/global.healthmax),0,c_lime,1);
 
 var _tilesizew = 48;
 var _tilesizeh = 48;

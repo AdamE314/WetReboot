@@ -14,3 +14,5 @@ walkSprite = sPlayerWalk;
 standSprite = sPlayerStand;
 hibernateSprite = sPlayerHibernate;
 image_speed = 1;
+
+wakeup = true;
