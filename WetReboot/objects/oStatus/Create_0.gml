@@ -126,6 +126,8 @@ makeProgress = function()
 		case 2:
 			buildings[2].enabled = true;
 			currentSpawnPointCount = instance_number(oSpawnPoint);
+			instance_destroy(oFakeDoor);
+			oPathfindingSetup.recreateGrid();
 			break;
 			
 		case 4:
@@ -143,7 +145,7 @@ spawning = false;
 spawningDelay = 60;
 spawningTimer = spawningDelay;
 spawnIndex = 0;
-currentSpawnPointCount = 3;
+currentSpawnPointCount = 2;
 currentSpawnPoint = 0;
 spawnPoints = [];
 global.progress = 0;

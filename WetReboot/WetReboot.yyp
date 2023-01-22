@@ -164,6 +164,7 @@
     {"id":{"name":"sFish","path":"sprites/sFish/sFish.yy",},"order":12,},
     {"id":{"name":"input_gamepad_get_map","path":"scripts/input_gamepad_get_map/input_gamepad_get_map.yy",},"order":6,},
     {"id":{"name":"input_profile_export","path":"scripts/input_profile_export/input_profile_export.yy",},"order":6,},
+    {"id":{"name":"oFakeDoor","path":"objects/oFakeDoor/oFakeDoor.yy",},"order":26,},
     {"id":{"name":"input_gyro_enabled_get","path":"scripts/input_gyro_enabled_get/input_gyro_enabled_get.yy",},"order":0,},
     {"id":{"name":"__input_gamepad_guid_parse","path":"scripts/__input_gamepad_guid_parse/__input_gamepad_guid_parse.yy",},"order":9,},
     {"id":{"name":"input_source_detect_new","path":"scripts/input_source_detect_new/input_source_detect_new.yy",},"order":3,},
@@ -359,6 +360,7 @@
     {"name":"Windows","path":"options/windows/options_windows.yy",},
     {"name":"operagx","path":"options/operagx/options_operagx.yy",},
     {"name":"Main","path":"options/main/options_main.yy",},
+    {"name":"HTML5","path":"options/html5/options_html5.yy",},
   ],
   "defaultScriptType": 1,
   "isEcma": false,
@@ -367,8 +369,8 @@
     "children": [],
   },
   "RoomOrderNodes": [
-    {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"roomId":{"name":"rm_level1","path":"rooms/rm_level1/rm_level1.yy",},},
+    {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"roomId":{"name":"rmLose","path":"rooms/rmLose/rmLose.yy",},},
   ],
   "Folders": [
@@ -421,6 +423,6 @@
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"sdl2.txt","CopyToMask":-1,"filePath":"datafiles",},
   ],
   "MetaData": {
-    "IDEVersion": "2022.11.1.56",
+    "IDEVersion": "2022.9.1.51",
   },
 }

@@ -1,6 +1,6 @@
 event_inherited();
 
-myHealthMax = 4;
+myHealthMax = 3.2;
 myHealth = myHealthMax;
 mySpeed = 2;
 
