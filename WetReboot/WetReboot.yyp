@@ -283,6 +283,7 @@
     {"id":{"name":"oRepairStation","path":"objects/oRepairStation/oRepairStation.yy",},"order":14,},
     {"id":{"name":"input_vibrate_constant","path":"scripts/input_vibrate_constant/input_vibrate_constant.yy",},"order":1,},
     {"id":{"name":"__input_system","path":"scripts/__input_system/__input_system.yy",},"order":38,},
+    {"id":{"name":"oSpawnPoint","path":"objects/oSpawnPoint/oSpawnPoint.yy",},"order":23,},
     {"id":{"name":"input_trigger_effect_off","path":"scripts/input_trigger_effect_off/input_trigger_effect_off.yy",},"order":4,},
     {"id":{"name":"input_mouse_capture_set","path":"scripts/input_mouse_capture_set/input_mouse_capture_set.yy",},"order":1,},
     {"id":{"name":"input_color_get","path":"scripts/input_color_get/input_color_get.yy",},"order":3,},

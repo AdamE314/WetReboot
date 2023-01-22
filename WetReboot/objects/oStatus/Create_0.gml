@@ -71,7 +71,7 @@ buildings =
 	sprite: sTurretHitbox,
 	stack: false,
 	origin: [16,16],
-	enabled: true,
+	enabled: false,
 	scrap: 0,
 	compounds: 0,
 	mouse: 0
@@ -82,7 +82,7 @@ buildings =
 	sprite: sSniperStack,
 	stack: true,
 	origin: [16,16],
-	enabled: true,
+	enabled: false,
 	scrap: 0,
 	compounds: 0,
 	mouse: 0
@@ -107,14 +107,32 @@ build = function(_x, _y)
 	buildMode = -1;
 }
 
+makeProgress = function()
+{
+	switch(global.progress)
+	{
+		case 2:
+			buildings[2].enabled = true;
+			currentSpawnPointCount = instance_number(oSpawnPoint);
+			break;
+			
+		case 4:
+			buildings[3].enabled = true;
+			break;
+		
+		case 6:
+			break;
+	}
+}
+
 
 spawning = false;
 spawningDelay = 60;
 spawningTimer = spawningDelay;
 spawnIndex = 0;
-currentSpawnPointCount = 2;
+currentSpawnPointCount = 3;
 currentSpawnPoint = 0;
-spawnPoints = [ {spawnX: room_width/2, spawnY: room_height/2}, {spawnX: room_width*3/4, spawnY: room_height/4} ]
+spawnPoints = [];
 global.progress = 0;
 enemySpawnLists = 
 [

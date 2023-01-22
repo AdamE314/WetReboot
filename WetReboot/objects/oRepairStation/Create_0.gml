@@ -26,6 +26,7 @@ giveReward = function()
 		used = true;
 		if(oneTime && targetSprite != -1) sprite_index = targetSprite;
 		
+		oStatus.makeProgress();
 		if(instance_exists(oReactor))
 		{
 			instance_nearest(x,y,oReactor).progress();
