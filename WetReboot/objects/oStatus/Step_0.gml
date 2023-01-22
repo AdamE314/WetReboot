@@ -86,7 +86,7 @@ if(global.energy > global.energymax)
 
 if(spawning)
 {
-	var _list = enemySpawnLists[global.progress];
+	var _list = enemySpawnLists[global.progress%array_length(enemySpawnLists)];
 	if(spawnIndex < array_length(_list))
 	{
 		spawningTimer--;
