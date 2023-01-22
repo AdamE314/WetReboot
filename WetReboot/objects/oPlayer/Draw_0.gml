@@ -1,0 +1,1 @@
+draw_sprite_outline(sprite_index,image_index,x,y,1+(global.state == STATE.SLEEP),image_xscale,1,0,c_white);
