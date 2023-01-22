@@ -7,8 +7,9 @@ cost = { scrap: 0, compounds: 0 };
 
 reward = { scrap: 5, compounds: 1, progress: 0 };
 
-oneTime = true;
+oneTime = false;
 used = false;
+targetSprite = -1;
 
 giveReward = function()
 {
@@ -21,5 +22,6 @@ giveReward = function()
 		global.compounds -= cost.compounds;
 		interactionProgress = 0;
 		used = true;
+		if(oneTime && targetSprite != -1) sprite_index = targetSprite;
 	}
 }

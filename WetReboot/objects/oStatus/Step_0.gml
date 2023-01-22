@@ -86,7 +86,6 @@ if(global.energy > global.energymax)
 
 if(spawning)
 {
-	show_debug_message(spawnIndex);
 	var _list = enemySpawnLists[global.progress];
 	if(spawnIndex < array_length(_list))
 	{
