@@ -24,6 +24,8 @@ if(instance_exists(pEnemy))
 		{
 			fireTimer = fireRate;
 			var _bullet = instance_create_layer(x,y,"Instances",oBullet);
+			audio_listener_position(-oPlayer.x,oPlayer.y,0);
+			audio_play_sound_at(sfx_turretshot,-x,y,0,50,100,1,false,1);
 			_bullet.damage = damage;
 			_bullet.image_angle = myAngle;
 		}
