@@ -10,11 +10,8 @@ oneTime = true;
 
 targetSprite = sRepairStationRepaired;
 
-processaudio = sBuildSound;
-audio = sJobDone;
 giveReward = function()
 {
-	if(audio != -1) audio_play_sound(audio,1,0);
 	if(!oneTime || !used)
 	{
 		global.scrap += reward.scrap;
