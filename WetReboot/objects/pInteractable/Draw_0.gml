@@ -5,6 +5,7 @@ if(instance_exists(oPlayer) && _canuse)
 {
 	if(oPlayer.targetInteractable == self)
 	{
+		var _drawx = x+drawxoffset;
 		var _canafford = (global.scrap >= cost.scrap && global.compounds >= cost.compounds);
 		
 		var _progress = interactionProgress/duration;
@@ -16,8 +17,8 @@ if(instance_exists(oPlayer) && _canuse)
 		shader_reset();
 		if(input_check("interact") && _canafford && _canuse)
 		{
-			draw_sprite_outline(sProgress,0,x,y-32);
-			draw_sprite_ext(sProgress,1,x-sprite_get_width(sProgress)*(1-_progress)/2,y-32,
+			draw_sprite_outline(sProgress,0,_drawx,y-32);
+			draw_sprite_ext(sProgress,1,_drawx-sprite_get_width(sProgress)*(1-_progress)/2,y-32,
 							_progress,1,0,c_white,1);
 		}
 		else 
@@ -25,11 +26,11 @@ if(instance_exists(oPlayer) && _canuse)
 			if(_canuse)
 			{
 				align();
-				if(cost.scrap > 0) draw_text(x,y-80,"Scrap: "+string(cost.scrap));
-				if(cost.compounds > 0) draw_text(x,y-60,"Compounds: "+string(cost.compounds));
+				if(cost.scrap > 0) draw_text(_drawx,y-80,"Scrap: "+string(cost.scrap));
+				if(cost.compounds > 0) draw_text(_drawx,y-60,"Compounds: "+string(cost.compounds));
 				align_reset();
 				if(_canafford)
-					draw_sprite_outline(sEPrompt,0,x,y-32);
+					draw_sprite_outline(sEPrompt,0,_drawx,y-32);
 			}
 		}
 		exit;

@@ -10,16 +10,13 @@ switch(global.state)
 			var _camy = camera_get_view_y(view_camera[0]);
 			var _camw = camera_get_view_width(view_camera[0]);
 			var _camh = camera_get_view_height(view_camera[0]);
-			var _tilesizew = 48;
-			var _tilesizeh = 48;
-			var _tilespace = 16;
 			for(var i=0;i<array_length(buildings);i++)
 			{
 				if(buildings[i].enabled)
 				{
 					var _canafford = (global.scrap >= buildings[i].scrap) && (global.compounds >= buildings[i].compounds)
-					var _buttonx = _camx+_camw-(_tilesizew+_tilespace); var _buttony = _camy+48+i*(_tilesizeh+_tilespace);
-					if(_canafford && mouse_x == clamp(mouse_x,_buttonx,_buttonx+_tilesizew) && mouse_y == clamp(mouse_y,_buttony,_buttony+_tilesizeh))
+					var _buttonx = _camx+_camw-(tilesizew+tilespace); var _buttony = _camy+48+i*(tilesizeh+tilespace);
+					if(_canafford && mouse_x == clamp(mouse_x,_buttonx,_buttonx+tilesizew) && mouse_y == clamp(mouse_y,_buttony,_buttony+tilesizeh))
 					{
 						buildings[i].mouse = 1;
 						if(mouse_check_button_pressed(mb_left))
@@ -92,7 +89,7 @@ if(spawning)
 		spawningTimer--;
 		if(spawningTimer <= 0)
 		{
-			var _sp = currentSpawnPoint;
+			var _sp = currentSpawnPoint % array_length(spawnPoints);
 				
 			var _spawner = instance_create_layer(spawnPoints[_sp].spawnX,spawnPoints[_sp].spawnY,"Instances",oSpawner);
 			_spawner.enemyType = _list[spawnIndex].enemy;

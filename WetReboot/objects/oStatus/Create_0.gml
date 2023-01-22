@@ -1,4 +1,12 @@
 
+draw_set_font(fnDefault);
+
+audio_play_sound(song_wetware,2,1);
+
+tilesizew = 96;
+tilesizeh = 64;
+tilespace = 8;
+
 enum STATE
 {
 	FREE,
@@ -70,18 +78,18 @@ buildings =
 	stack: false,
 	origin: [16,16],
 	enabled: false,
-	scrap: 0,
-	compounds: 0,
+	scrap: 1,
+	compounds: 1,
 	mouse: 0
 	},
 	{
-	name: "Sniper Turret",
+	name: "Sniper",
 	object: oSniper,
 	sprite: sSniperStack,
 	stack: true,
 	origin: [16,16],
 	enabled: false,
-	scrap: 0,
+	scrap: 6,
 	compounds: 0,
 	mouse: 0
 	},
@@ -98,6 +106,7 @@ buildCheckTile = function(_x,_y,_hitbox=sTurretHitbox)
 
 build = function(_x, _y)
 {
+	audio_play_sound(sJobDone,1,0);
 	instance_create_layer(_x,_y,"Instances",buildings[buildMode].object);
 	global.scrap -= buildings[buildMode].scrap;
 	global.compounds -= buildings[buildMode].compounds;

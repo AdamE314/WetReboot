@@ -1,5 +1,5 @@
 
-walkSpeed = 4;
+walkSpeed = 3;
 
 if(instance_exists(oCamera))
 {

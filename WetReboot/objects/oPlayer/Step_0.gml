@@ -11,6 +11,7 @@ switch(global.state)
 			if(image_index < 1)
 			{
 				sprite_index = standSprite;
+				image_index = 0;
 			}
 			exit;
 		}
@@ -29,6 +30,7 @@ switch(global.state)
 		// Interaction
 		var _iin = input_check("interact");
 		
+		var _playsound = false;
 		if(targetInteractable != noone)
 		{
 			var _dist = distance_to_object(targetInteractable);
@@ -46,6 +48,11 @@ switch(global.state)
 					{
 						if(global.scrap >= cost.scrap && global.compounds >= cost.compounds && (!oneTime || !used))
 						{
+							_playsound = true;
+							if(!audio_is_playing(sBuildSound))
+							{
+								audio_play_sound(sBuildSound,1,1);
+							}
 							interactionProgress++;
 							if(interactionProgress > duration)
 							{
@@ -60,11 +67,25 @@ switch(global.state)
 				}
 			}
 		}
+		
+		if(!_playsound && audio_is_playing(sBuildSound))
+		{
+			audio_stop_sound(sBuildSound);
+		}
+		if(sprite_index == sPlayerWalk && image_index % 2 == 1)
+		{
+			audio_play_sound(sMetalFootstep,1,0);
+		}
 			
 		break;
 		
 	case STATE.SLEEP:
-	
+		
+		if(audio_is_playing(sBuildSound))
+		{
+			audio_stop_sound(sBuildSound);
+		}
+		
 		if(sprite_index != hibernateSprite)
 		{
 			sprite_index = hibernateSprite;
