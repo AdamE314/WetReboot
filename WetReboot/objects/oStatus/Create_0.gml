@@ -153,8 +153,44 @@ enemySpawnLists =
 [
 	[
 	{enemy : oFish, count: 1},
+	{enemy : oFish, count: 1},
+	],
+	[
 	{enemy : oFish, count: 2},
+	{enemy : oBrute, count: 1},
+	{enemy : oFish, count: 2},
+	
+	],
+	[
+	{enemy : oBrute, count: 1},
+	{enemy : oFish, count: 2},
+	{enemy : oBrute, count: 1},
 	{enemy : oFish, count: 3},
-	{enemy : oBrute, count: 1}
+	],
+	[
+	{enemy : oFish, count: 2},
+	{enemy : oFish, count: 2},
+	{enemy : oBrute, count: 1},
+	{enemy : oBrute, count: 1},
+	{enemy : oFish, count: 3},
+	],
+	[
+	{enemy : oBrute, count: 1},
+	{enemy : oBrute, count: 1},
+	{enemy : oBrute, count: 1},
+	{enemy : oFish, count: 3},
+	{enemy : oFish, count: 3},
+	{enemy : oFish, count: 3},
+	],
+	[
+	{enemy : oFish, count: 3},
+	{enemy : oFish, count: 3},
+	{enemy : oBrute, count: 1},
+	{enemy : oBrute, count: 1},
+	{enemy : oBrute, count: 1},
+	{enemy : oBrute, count: 1},
+	{enemy : oFish, count: 3},
+	{enemy : oFish, count: 3},
+	{enemy : oFish, count: 3},
 	]
 ]
