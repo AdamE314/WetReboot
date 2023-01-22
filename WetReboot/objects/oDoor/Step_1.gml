@@ -19,3 +19,12 @@ switch(global.state)
 		interactionProgress = 0;
 		break;
 }
+
+if(open)
+{
+	image_index = 1;
+}
+else
+{
+	image_index = 0;
+}
