@@ -44,10 +44,13 @@ switch(global.state)
 				{
 					with(targetInteractable)
 					{
-						interactionProgress++;
-						if(interactionProgress > duration)
+						if(global.scrap >= cost.scrap && global.compounds >= cost.compounds && (!oneTime || !used))
 						{
-							giveReward();
+							interactionProgress++;
+							if(interactionProgress > duration)
+							{
+								giveReward();
+							}
 						}
 					}
 				}

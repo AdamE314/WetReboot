@@ -1,10 +1,12 @@
 
-draw_text(x,y-24,string(distance_to_object(oPlayer))+", "+string(oPlayer.targetInteractableDistance));
+var _canuse = (!oneTime || !used);
 
-if(instance_exists(oPlayer))
+if(instance_exists(oPlayer) && _canuse)
 {
 	if(oPlayer.targetInteractable == self)
 	{
+		var _canafford = (global.scrap >= cost.scrap && global.compounds >= cost.compounds);
+		
 		var _progress = interactionProgress/duration;
 		draw_sprite_outline(sprite_index,image_index,x,y);
 		shader_set(shWhite);
@@ -12,7 +14,7 @@ if(instance_exists(oPlayer))
 						image_xscale,image_yscale,image_angle,
 						c_white,0.5*_progress);
 		shader_reset();
-		if(input_check("interact"))
+		if(input_check("interact") && _canafford && _canuse)
 		{
 			draw_sprite_outline(sProgress,0,x,y-32);
 			draw_sprite_ext(sProgress,1,x-sprite_get_width(sProgress)*(1-_progress)/2,y-32,
@@ -20,10 +22,20 @@ if(instance_exists(oPlayer))
 		}
 		else 
 		{
-			draw_sprite_outline(sEPrompt,0,x,y-32);
+			if(_canuse)
+			{
+				align();
+				if(cost.scrap > 0) draw_text(x,y-80,"Scrap: "+string(cost.scrap));
+				if(cost.compounds > 0) draw_text(x,y-60,"Compounds: "+string(cost.compounds));
+				align_reset();
+				if(_canafford)
+					draw_sprite_outline(sEPrompt,0,x,y-32);
+			}
 		}
 		exit;
 	}
 }
 
-draw_self();
+var _col = (!_canuse) ? c_ltgray : c_white;
+
+draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,_col,image_alpha);

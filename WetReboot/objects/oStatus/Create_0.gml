@@ -97,3 +97,20 @@ build = function(_x, _y)
 	global.compounds -= buildings[buildMode].compounds;
 	buildMode = -1;
 }
+
+
+spawning = false;
+spawningDelay = 60;
+spawningTimer = spawningDelay;
+spawnIndex = 0;
+spawnPoints = [ {spawnX: room_width/2, spawnY: room_height/2} ]
+global.progress = 0;
+enemySpawnLists = 
+[
+	[
+	{enemy : oFish, count: 1, spawnpoint: 0},
+	{enemy : oFish, count: 2, spawnpoint: 0},
+	{enemy : oFish, count: 3, spawnpoint: 0},
+	{enemy : oBrute, count: 1, spawnpoint: 0}
+	]
+]

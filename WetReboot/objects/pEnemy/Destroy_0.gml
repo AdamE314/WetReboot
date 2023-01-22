@@ -1,1 +1,0 @@
-global.enterFree = true;

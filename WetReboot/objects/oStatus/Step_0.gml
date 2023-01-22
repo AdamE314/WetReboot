@@ -83,3 +83,36 @@ if(global.energy > global.energymax)
 	energyrefill = 0;
 }
 
+
+if(spawning)
+{
+	show_debug_message(spawnIndex);
+	var _list = enemySpawnLists[global.progress];
+	if(spawnIndex < array_length(_list))
+	{
+		spawningTimer--;
+		if(spawningTimer <= 0)
+		{
+			for(var i=0;i<_list[spawnIndex].count;i++)
+			{
+				var _sp = _list[spawnIndex].spawnpoint;
+				var _spawndir = i*360/_list[spawnIndex].count;
+				var _xoff = lengthdir_x(32,_spawndir); var _yoff = lengthdir_y(32,_spawndir);
+				instance_create_layer(spawnPoints[_sp].spawnX+_xoff,spawnPoints[_sp].spawnY+_yoff,"Instances",_list[spawnIndex].enemy);
+			}
+			spawningTimer = spawningDelay;
+			spawnIndex++;
+		}
+	}
+	else
+	{
+		if(!instance_exists(pEnemy))
+		{
+			global.enterFree = true;
+			spawnIndex = 0;
+			spawning = false;
+		}
+	}
+}
+
+
