@@ -1,6 +1,7 @@
 event_inherited();
 
-myHealth = 4;
+myHealthMax = 4;
+myHealth = myHealthMax;
 mySpeed = 2;
 
 startPathing();

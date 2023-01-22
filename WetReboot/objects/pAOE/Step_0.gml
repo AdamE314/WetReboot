@@ -10,10 +10,12 @@ if(instance_exists(pEnemy))
 		{
 			if(distance_to_object(global.currentaoe) < global.currentaoe.range)
 			{
-				takeDamage(global.currentaoe.damage);
+				takeDamage(global.currentaoe.damage, false);
 			}
 		}
+		active = true;
 	}
+	else active = false;
 }
 
 

@@ -1,7 +1,8 @@
 // Inherit the parent event
 event_inherited();
 
-myHealth = 15;
+myHealthMax = 15;
+myHealth = myHealthMax;
 mySpeed = 0.8;
 damage = 5;
 

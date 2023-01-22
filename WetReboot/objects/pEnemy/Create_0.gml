@@ -1,16 +1,18 @@
 
-myHealth = 3;
+myHealthMax = 3;
+myHealth = myHealthMax;
 mySpeed = 2;
 damage = 1;
 lastx = x;
 
-takeDamage = function(_damage)
+takeDamage = function(_damage, _playsound = true)
 {
 	myHealth -= _damage;
 	if(myHealth <= 0)
 	{
 		instance_destroy();
 	}
+	if(_playsound) audio_play_sound(snImpact,1,0);
 }
 
 
