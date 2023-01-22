@@ -13,7 +13,7 @@ function align_reset()
 
 
 // Draw sprite stack
-function draw_stack(_spr, _x, _y, _rot = 0, _scale = 1, _alpha = 0, _subimgscale = 1, _topscale = 0.5, _rot2D = 0, _startimg = 0, _size = -1)
+function draw_stack(_spr, _x, _y, _rot = 0, _olw = 1, _scale = 1, _alpha = 1, _subimgscale = 1, _topscale = 0.5, _rot2D = 0, _startimg = 0, _size = -1)
 {
 	// Getting values
 	if(_size == -1) _size = sprite_get_number(_spr);
@@ -51,10 +51,10 @@ function draw_stack(_spr, _x, _y, _rot = 0, _scale = 1, _alpha = 0, _subimgscale
 	var _xoff = -_sox*_scale;
 	var _yoff = -_soy*_scale*_topscale-_size*_scale;
 	// Drawing the actual surface to the screen with rotation
-	draw_surface_ext(_rotsurf,
+	draw_surface_outline(_rotsurf,
 					_x+dcos(_rot2D)*_xoff+dsin(_rot2D)*_yoff,
 					_y+dcos(_rot2D)*_yoff-dsin(_rot2D)*_xoff,
-					1,1,_rot2D,c_white,_alpha);
+					_olw,1,1,_rot2D,draw_get_color(),_alpha);
 	surface_free(_rotsurf);
 	
 	/* Rendering from before adding the step with the _rotsurf surface

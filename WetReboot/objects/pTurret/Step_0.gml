@@ -22,16 +22,33 @@ if(instance_exists(pEnemy))
 		
 		if(fireTimer <= 0)
 		{
-			fireTimer = fireRate;
-			var _bullet = instance_create_layer(x,y,"Instances",oBullet);
-			audio_listener_position(-oPlayer.x,oPlayer.y,0);
-			audio_play_sound_at(sfx_turretshot,-x,y,0,50,100,1,false,1);
-			_bullet.damage = damage;
-			_bullet.image_angle = myAngle;
+			if(burstCount > 0)
+			{
+				burstTimer--;
+				if(burstTimer <= 0){
+					var _bullet = instance_create_layer(x,y-12,"Bullets",oBullet);
+					audio_listener_position(-oPlayer.x,oPlayer.y,0);
+					audio_play_sound_at(sfx_turretshot,-x,y,0,50,100,1,false,1);
+					_bullet.damage = damage;
+					_bullet.image_angle = myAngle;
+					burstCount--;
+					burstTimer = burstDelay
+					if(burstCount <= 0)
+					{
+						burstCount = burstSize;
+						fireTimer = fireRate;
+					}
+				}
+				
+			}
+			
 		}
 
 	}
 	fireTimer--;
+} else {
+	myAngle += idleTurnSpeed;
+	if(irandom(180) == 1) idleTurnSpeed *= -1;
 }
 
 

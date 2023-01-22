@@ -86,21 +86,24 @@ if(global.energy > global.energymax)
 
 if(spawning)
 {
-	var _list = enemySpawnLists[global.progress];
+	var _list = enemySpawnLists[global.progress%array_length(enemySpawnLists)];
 	if(spawnIndex < array_length(_list))
 	{
 		spawningTimer--;
 		if(spawningTimer <= 0)
 		{
-			for(var i=0;i<_list[spawnIndex].count;i++)
-			{
-				var _sp = _list[spawnIndex].spawnpoint;
-				var _spawndir = i*360/_list[spawnIndex].count;
-				var _xoff = lengthdir_x(32,_spawndir); var _yoff = lengthdir_y(32,_spawndir);
-				instance_create_layer(spawnPoints[_sp].spawnX+_xoff,spawnPoints[_sp].spawnY+_yoff,"Instances",_list[spawnIndex].enemy);
-			}
+			var _sp = currentSpawnPoint;
+				
+			var _spawner = instance_create_layer(spawnPoints[_sp].spawnX,spawnPoints[_sp].spawnY,"Instances",oSpawner);
+			_spawner.enemyType = _list[spawnIndex].enemy;
+			_spawner.enemyCount = _list[spawnIndex].count;
 			spawningTimer = spawningDelay;
 			spawnIndex++;
+			currentSpawnPoint++;
+			if(currentSpawnPoint >= currentSpawnPointCount)
+			{
+				currentSpawnPoint = 0;
+			}
 		}
 	}
 	else
@@ -115,3 +118,7 @@ if(spawning)
 }
 
 
+if(global.health <= 0 && !instance_exists(oLose))
+{
+	instance_create_depth(0,0,-1,oLose);
+}

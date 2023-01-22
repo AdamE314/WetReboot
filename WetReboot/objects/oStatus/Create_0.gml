@@ -25,10 +25,10 @@ enterFree = function()
 	alarm_set(3,90);
 }
 
-global.scrap = 0;
-global.compounds = 0;
+global.scrap = 20;
+global.compounds = 20;
 
-global.energymax = 300;
+global.energymax = 600;
 global.energy = global.energymax;
 energyrefill = 0;
 
@@ -36,13 +36,16 @@ global.healthmax = 25;
 global.health = global.healthmax;
 
 buildMode = -1; // -1 for none, index of which one for building
+buildAngle = 0;
+buildTurnSpeed = 0.5;
 
 buildings = 
 [
 	{
 	name: "Turret",
 	object: pTurret,
-	sprite: sTurretHitbox,
+	sprite: sTurretStack,
+	stack: true,
 	origin: [16,16],
 	enabled: true,
 	scrap: 3,
@@ -51,8 +54,9 @@ buildings =
 	},
 	{
 	name: "Mine",
-	object: pTurret,
-	sprite: sTurretHitbox,
+	object: pMine,
+	sprite: sMineStack,
+	stack: true,
 	origin: [16,16],
 	enabled: true,
 	scrap: 1,
@@ -61,21 +65,23 @@ buildings =
 	},
 	{
 	name: "Tesla Coil",
-	object: pTurret,
+	object: pAOE,
 	sprite: sTurretHitbox,
+	stack: false,
 	origin: [16,16],
-	enabled: false,
-	scrap: 1,
-	compounds: 1,
+	enabled: true,
+	scrap: 0,
+	compounds: 0,
 	mouse: 0
 	},
 	{
 	name: "Sniper Turret",
-	object: pTurret,
-	sprite: sTurretHitbox,
+	object: oSniper,
+	sprite: sSniperStack,
+	stack: true,
 	origin: [16,16],
-	enabled: false,
-	scrap: 6,
+	enabled: true,
+	scrap: 0,
 	compounds: 0,
 	mouse: 0
 	},
@@ -103,14 +109,16 @@ spawning = false;
 spawningDelay = 60;
 spawningTimer = spawningDelay;
 spawnIndex = 0;
-spawnPoints = [ {spawnX: room_width/2, spawnY: room_height/2} ]
+currentSpawnPointCount = 2;
+currentSpawnPoint = 0;
+spawnPoints = [ {spawnX: room_width/2, spawnY: room_height/2}, {spawnX: room_width*3/4, spawnY: room_height/4} ]
 global.progress = 0;
 enemySpawnLists = 
 [
 	[
-	{enemy : oFish, count: 1, spawnpoint: 0},
-	{enemy : oFish, count: 2, spawnpoint: 0},
-	{enemy : oFish, count: 3, spawnpoint: 0},
-	{enemy : oBrute, count: 1, spawnpoint: 0}
+	{enemy : oFish, count: 1},
+	{enemy : oFish, count: 2},
+	{enemy : oFish, count: 3},
+	{enemy : oBrute, count: 1}
 	]
 ]

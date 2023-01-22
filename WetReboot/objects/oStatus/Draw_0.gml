@@ -39,9 +39,17 @@ for(var i=0;i<array_length(buildings);i++)
 
 if(buildMode != -1)
 {
+	var _building = buildings[buildMode]
 	// Draw build mode
-	var _snapx = mouse_x - (mouse_x%32) + buildings[buildMode].origin[0];
-	var _snapy = mouse_y - (mouse_y%32) + buildings[buildMode].origin[1];
-	var _col = buildCheckTile(_snapx,_snapy,sTurretHitbox) ? c_green : c_red;
-	draw_sprite_ext(buildings[buildMode].sprite,0,_snapx,_snapy,1,1,0,_col,0.5);
+	var _snapx = mouse_x - (mouse_x%32) + _building.origin[0];
+	var _snapy = mouse_y - (mouse_y%32) + _building.origin[1];
+	var _col = buildCheckTile(_snapx,_snapy,sTurretHitbox) ? merge_color(c_lime,c_white,0.5) : merge_color(c_red,c_white,0.5);
+	if(_building.stack)
+	{
+		draw_set_color(_col);
+		draw_stack(_building.sprite,_snapx,_snapy,buildAngle,1+(oCamera.zoomOut),1);
+		buildAngle += buildTurnSpeed;
+		draw_set_color(c_white);
+	}
+	else draw_sprite_ext(buildings[buildMode].sprite,0,_snapx,_snapy,1,1,0,_col,1);
 }
