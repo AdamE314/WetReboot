@@ -28,7 +28,7 @@ enterFree = function()
 global.scrap = 20;
 global.compounds = 20;
 
-global.energymax = 600;
+global.energymax = 300000000000;//600;
 global.energy = global.energymax;
 energyrefill = 0;
 
