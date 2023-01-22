@@ -107,6 +107,12 @@ build = function(_x, _y)
 	buildMode = -1;
 }
 
+win = function()
+{
+	var _win = instance_create_depth(0,0,-1,oLose);
+	_win.mystring = "You Won\nPress R to Restart."
+}
+
 makeProgress = function()
 {
 	switch(global.progress)
@@ -121,6 +127,7 @@ makeProgress = function()
 			break;
 		
 		case 6:
+			win();
 			break;
 	}
 }
