@@ -74,7 +74,7 @@ buildings =
 	{
 	name: "Tesla Coil",
 	object: pAOE,
-	sprite: sTurretHitbox,
+	sprite: sTeslaCoil,
 	stack: false,
 	origin: [16,16],
 	enabled: false,

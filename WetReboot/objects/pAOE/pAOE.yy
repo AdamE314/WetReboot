@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "pAOE",
   "spriteId": {
-    "name": "sTurretHitbox",
-    "path": "sprites/sTurretHitbox/sTurretHitbox.yy",
+    "name": "sTeslaCoil",
+    "path": "sprites/sTeslaCoil/sTeslaCoil.yy",
   },
   "solid": false,
   "visible": true,

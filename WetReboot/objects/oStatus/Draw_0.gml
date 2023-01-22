@@ -44,7 +44,7 @@ for(var i=0;i<array_length(buildings);i++)
 			draw_stack(_building.sprite,_snapx,_snapy,buildAngle,1+(oCamera.zoomOut),1);
 			buildAngle += buildTurnSpeed;
 		}
-		else draw_sprite_ext(buildings[i].sprite,0,_snapx,_snapy,1,1,0,c_white,1);
+		else draw_sprite_outline(buildings[i].sprite,0,_snapx,_snapy,1,1,1,0,c_white,1);
 		
 		draw_sprite(spr_scrap_icon,0,_buttonx+8,_buttony+tilesizeh/2-4);
 		draw_text_outline(_buttonx+24,_buttony+tilesizeh/2-2,buildings[i].scrap);

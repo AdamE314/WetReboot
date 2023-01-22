@@ -167,6 +167,7 @@
     {"id":{"name":"input_cursor_previous_x","path":"scripts/input_cursor_previous_x/input_cursor_previous_x.yy",},"order":9,},
     {"id":{"name":"input_binding_gamepad_axis","path":"scripts/input_binding_gamepad_axis/input_binding_gamepad_axis.yy",},"order":1,},
     {"id":{"name":"sTurretStack","path":"sprites/sTurretStack/sTurretStack.yy",},"order":18,},
+    {"id":{"name":"sTeslaCoil","path":"sprites/sTeslaCoil/sTeslaCoil.yy",},"order":27,},
     {"id":{"name":"input_binding_threshold_set","path":"scripts/input_binding_threshold_set/input_binding_threshold_set.yy",},"order":13,},
     {"id":{"name":"input_window_has_focus","path":"scripts/input_window_has_focus/input_window_has_focus.yy",},"order":11,},
     {"id":{"name":"input_x","path":"scripts/input_x/input_x.yy",},"order":2,},
