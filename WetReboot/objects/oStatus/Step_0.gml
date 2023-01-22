@@ -58,8 +58,8 @@ switch(global.state)
 		}
 		
 		// State transition
-		global.energy--;
-		if(global.energy <= 0)
+		if(!rebooting) global.energy--;
+		if(global.energy <= 0 && !rebooting)
 		{
 			enterSleep();
 		}
@@ -67,9 +67,19 @@ switch(global.state)
 		break;
 	
 	case STATE.SLEEP:
-		if(!instance_exists(pEnemy))
+		if(global.enterFree)
 		{
+			global.enterFree = false;
 			enterFree();
 		}
 		break;
 }
+
+
+global.energy += energyrefill;
+if(global.energy > global.energymax) 
+{
+	global.energy = global.energymax;
+	energyrefill = 0;
+}
+

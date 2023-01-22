@@ -20,7 +20,6 @@ if(instance_exists(pEnemy))
 			myAngle = _targetangle;
 		}
 		
-		fireTimer--;
 		if(fireTimer <= 0)
 		{
 			fireTimer = fireRate;
@@ -30,6 +29,7 @@ if(instance_exists(pEnemy))
 		}
 
 	}
+	fireTimer--;
 }
 
 

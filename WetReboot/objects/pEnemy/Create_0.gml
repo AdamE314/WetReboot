@@ -1,5 +1,8 @@
 
 myHealth = 3;
+mySpeed = 2;
+damage = 1;
+lastx = x;
 
 takeDamage = function(_damage)
 {
@@ -11,12 +14,9 @@ takeDamage = function(_damage)
 }
 
 
-
-
-
-path = path_add();
-
-mp_grid_path(global.grid,path,x,y,oPlayer.x,oPlayer.y,1);
-
-path_start(path,1,path_action_stop,1);
-
+startPathing = function()
+{
+	path = path_add();
+	mp_grid_path(global.grid,path,x,y,oPlayer.x,oPlayer.y,1);
+	path_start(path,mySpeed,path_action_stop,1);
+}

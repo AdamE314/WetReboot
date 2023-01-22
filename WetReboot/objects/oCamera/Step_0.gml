@@ -1,5 +1,4 @@
 
-zoomOut = (global.state != STATE.FREE);
 var _lerptargetw = !zoomOut ? global.swidth : global.swidth*2;
 var _lerptargeth = !zoomOut ? global.sheight : global.sheight*2;
 currentWidth = lerp(currentWidth,_lerptargetw,0.1);
@@ -17,7 +16,7 @@ if(follow && followTarget.obj != noone && instance_exists(followTarget.obj)) // 
 	camY = lerp(camY,_targety,max(followRateY,followSnap));
 	
 }
-else if(!follow)
+else if(zoomOut)
 {
 	// Key controls
 	var _hin = input_check("right")-input_check("left");
