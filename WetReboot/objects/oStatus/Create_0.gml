@@ -33,11 +33,11 @@ enterFree = function()
 	alarm_set(3,90);
 }
 
-global.scrap = 20;
-global.compounds = 20;
+global.scrap = 0;
+global.compounds = 0;
 
-global.energymax = 600;
-global.energy = global.energymax;
+global.energymax = 3200;
+global.energy = global.energymax/2;
 energyrefill = 0;
 
 global.healthmax = 25;
@@ -67,7 +67,7 @@ buildings =
 	stack: true,
 	origin: [16,16],
 	enabled: true,
-	scrap: 1,
+	scrap: 2,
 	compounds: 0,
 	mouse: 0
 	},
@@ -90,7 +90,7 @@ buildings =
 	origin: [16,16],
 	enabled: false,
 	scrap: 6,
-	compounds: 0,
+	compounds: 2,
 	mouse: 0
 	},
 ]
