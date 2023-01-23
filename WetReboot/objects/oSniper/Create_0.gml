@@ -12,3 +12,4 @@ burstSize = 3;
 burstCount = burstSize;
 
 stack = sSniperStack;
+smallstack = sSniperStackSmall;

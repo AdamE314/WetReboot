@@ -54,19 +54,20 @@ function draw_stack(_spr, _x, _y, _rot = 0, _olw = 1, _scale = 1, _alpha = 1, _s
 	draw_surface_outline(_rotsurf,
 					_x+dcos(_rot2D)*_xoff+dsin(_rot2D)*_yoff,
 					_y+dcos(_rot2D)*_yoff-dsin(_rot2D)*_xoff,
-					_olw,1,1,_rot2D,draw_get_color(),_alpha);
+					_olw,1,1,_rot2D,draw_get_color());
 	surface_free(_rotsurf);
 	
-	/* Rendering from before adding the step with the _rotsurf surface
+	//Rendering from before adding the step with the _rotsurf surface
 	// Getting appropriate x and y offsets based on origin, scale, and rotation
-	var _xoff = -_sox*_scale;
+	/*var _xoff = -_sox*_scale;
 	var _yoff = -_soy*_scale*_topscale;
 	// Drawing subimgs to screen
 	for(var i=0;i<_size;i += _topscale)
 	{
 		draw_surface_part_ext(_surf,floor(i)*_sw,0,_sw,_sh,_x+_xoff,_y+_yoff-i*_scale,_scale,_scale*_topscale,c_white,1);
 	}
-	*/
+	surface_free(_surf);*/
+	
 }
 
 

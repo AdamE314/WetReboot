@@ -14,3 +14,4 @@ idleTurnSpeed = 0.25;
 fireTimer = fireRate;
 
 stack = sTurretStack;
+smallstack = sTurretStackSmall;

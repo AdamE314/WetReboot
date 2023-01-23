@@ -16,8 +16,8 @@ switch(global.state)
 			exit;
 		}
 		// Movement
-		var _hin = input_check("right")-input_check("left");
-		var _vin = input_check("down")-input_check("up");
+		var _hin = keyboard_check(ord("D"))-keyboard_check(ord("A"));
+		var _vin = keyboard_check(ord("S"))-keyboard_check(ord("W"));
 
 		var _hmov = walkSpeed * _hin; var _vmov = walkSpeed * _vin;
 		
@@ -27,8 +27,9 @@ switch(global.state)
 
 		move_perfect(_hmov,_vmov,pWall);
 		
+		
 		// Interaction
-		var _iin = input_check("interact");
+		var _iin = keyboard_check(ord("E"));
 		
 		var _playsound = false;
 		if(targetInteractable != noone)

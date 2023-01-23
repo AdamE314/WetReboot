@@ -8,3 +8,4 @@ detonating = false;
 explodeDelay = 30;
 
 stack = sMineStack;
+smallstack = sMineStackSmall;

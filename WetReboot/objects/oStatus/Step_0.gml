@@ -1,4 +1,6 @@
 
+if(!audio_is_playing(song_wetware)) audio_play_sound(song_wetware,2,1);
+
 switch(global.state)
 {
 	case STATE.FREE:

@@ -19,8 +19,8 @@ if(follow && followTarget.obj != noone && instance_exists(followTarget.obj)) // 
 else if(zoomOut)
 {
 	// Key controls
-	var _hin = input_check("right")-input_check("left");
-	var _vin = input_check("down")-input_check("up");
+	var _hin = keyboard_check(ord("D"))-keyboard_check(ord("A"));
+	var _vin = keyboard_check(ord("S"))-keyboard_check(ord("W"));
 	
 	camX = clamp(camX + 10*_hin,currentWidth/2,room_width-currentWidth/2);
 	camY = clamp(camY + 10*_vin,currentHeight/2,room_height-currentHeight/2);

@@ -15,7 +15,7 @@ if(instance_exists(oPlayer) && _canuse)
 						image_xscale,image_yscale,image_angle,
 						c_white,0.5*_progress);
 		shader_reset();
-		if(input_check("interact") && _canafford && _canuse)
+		if(keyboard_check(ord("E")) && _canafford && _canuse)
 		{
 			draw_sprite_outline(sProgress,0,_drawx,y-32);
 			draw_sprite_ext(sProgress,1,_drawx-sprite_get_width(sProgress)*(1-_progress)/2,y-32,
