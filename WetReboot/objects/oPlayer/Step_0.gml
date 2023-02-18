@@ -47,7 +47,7 @@ switch(global.state)
 				{
 					with(targetInteractable)
 					{
-						if(global.scrap >= cost.scrap && global.compounds >= cost.compounds && (!oneTime || !used))
+						if(global.scrap >= cost.scrap && global.compounds >= cost.compounds && (numUses != 0 || !used))
 						{
 							_playsound = true;
 							if(!audio_is_playing(sBuildSound))

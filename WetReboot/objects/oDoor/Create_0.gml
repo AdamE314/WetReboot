@@ -7,7 +7,7 @@ instance_deactivate_object(myWall);
 
 cost = { scrap: 1, compounds: 0 };
 
-reward = { scrap: 0, compounds: 0, progress: 0 };
+reward = { scrap: 0, compounds: 0, progress: 0, hp_x5: 0, energy_x5:0 };
 
 duration = 200;
 

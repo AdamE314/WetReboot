@@ -1,5 +1,5 @@
 
-var _canuse = (!oneTime || !used);
+var _canuse = (numUses != 0 || !used);
 
 if(instance_exists(oPlayer) && _canuse)
 {

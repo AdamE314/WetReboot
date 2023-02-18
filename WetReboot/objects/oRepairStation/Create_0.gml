@@ -4,7 +4,7 @@ event_inherited();
 
 cost = { scrap: 0, compounds: 0 };
 
-reward = { scrap: 0, compounds: 0, progress: 1 };
+reward = { scrap: 0, compounds: 0, progress: 1, hp_x5: 0, energy_x5: 0 };
 
 duration = 320 ;
 

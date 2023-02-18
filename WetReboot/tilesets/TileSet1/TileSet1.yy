@@ -2,27 +2,8 @@
   "resourceType": "GMTileSet",
   "resourceVersion": "1.0",
   "name": "TileSet1",
-  "spriteId": {
-    "name": "sTileset",
-    "path": "sprites/sTileset/sTileset.yy",
-  },
-  "tileWidth": 32,
-  "tileHeight": 32,
-  "tilexoff": 0,
-  "tileyoff": 0,
-  "tilehsep": 0,
-  "tilevsep": 0,
-  "spriteNoExport": true,
-  "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
-  },
-  "out_tilehborder": 2,
-  "out_tilevborder": 2,
-  "out_columns": 6,
-  "tile_count": 40,
   "autoTileSets": [
-    {"resourceType":"GMAutoTileSet","resourceVersion":"1.0","name":"autotile_green","tiles":[
+    {"resourceType":"GMAutoTileSet","resourceVersion":"1.0","name":"autotile_green","closed_edge":false,"tiles":[
         7,
         35,
         33,
@@ -70,8 +51,8 @@
         32,
         10,
         11,
-      ],"closed_edge":false,},
-    {"resourceType":"GMAutoTileSet","resourceVersion":"1.0","name":"autotile_grey","tiles":[
+      ],},
+    {"resourceType":"GMAutoTileSet","resourceVersion":"1.0","name":"autotile_grey","closed_edge":false,"tiles":[
         7,
         39,
         37,
@@ -119,10 +100,34 @@
         36,
         14,
         15,
-      ],"closed_edge":false,},
+      ],},
   ],
-  "tileAnimationFrames": [],
-  "tileAnimationSpeed": 15.0,
+  "macroPageTiles": {
+    "SerialiseHeight": 7,
+    "SerialiseWidth": 14,
+    "TileCompressedData": [
+      -98,
+      0,
+    ],
+    "TileDataFormat": 1,
+  },
+  "out_columns": 6,
+  "out_tilehborder": 2,
+  "out_tilevborder": 2,
+  "parent": {
+    "name": "WetReboot",
+    "path": "WetReboot.yyp",
+  },
+  "spriteId": {
+    "name": "sTileset",
+    "path": "sprites/sTileset/sTileset.yy",
+  },
+  "spriteNoExport": true,
+  "textureGroupId": {
+    "name": "Default",
+    "path": "texturegroups/Default",
+  },
+  "tile_count": 40,
   "tileAnimation": {
     "FrameData": [
       0,
@@ -168,17 +173,12 @@
     ],
     "SerialiseFrameCount": 1,
   },
-  "macroPageTiles": {
-    "TileDataFormat": 1,
-    "SerialiseWidth": 14,
-    "SerialiseHeight": 7,
-    "TileCompressedData": [
-      -98,
-      0,
-    ],
-  },
-  "parent": {
-    "name": "WetReboot",
-    "path": "WetReboot.yyp",
-  },
+  "tileAnimationFrames": [],
+  "tileAnimationSpeed": 15.0,
+  "tileHeight": 32,
+  "tilehsep": 0,
+  "tilevsep": 0,
+  "tileWidth": 32,
+  "tilexoff": 0,
+  "tileyoff": 0,
 }
